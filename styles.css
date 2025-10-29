@@ -1,0 +1,92 @@
+/*
+    styles.css
+    Author: Nelson Negron
+    Beginner's Guide to Tech Support
+ */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /*white*/
+    color: #333333; /*dark grey text color*/
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #001f3f; /*navy*/
+    color: #ffffff; /*navy*/
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #2c3e50; /*navy gray*/
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff; /*white*/
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff4136; /*red*/
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+ul {
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+li:hover {
+    color: #001f3f;
+    cursor: default;
+}
+
+.logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+h2 {
+    color: #001f3f; /*navy*/
+}
+
+footer {
+    background-color: #f0f0f0; /*light grey*/
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: #555555;
+}
+
+footer a {
+    color: #001f3f; /*navy*/
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff4136; /*red*/
+}
