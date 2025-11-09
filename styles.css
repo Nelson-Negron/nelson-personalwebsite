@@ -52,6 +52,7 @@ nav ul {
 }
 
 nav li {
+    position: relative;
     margin: 0 15px;
 }
 
@@ -244,3 +245,4 @@ footer a:hover {
     color: #ff4136; /*red*/
 
 }
+
