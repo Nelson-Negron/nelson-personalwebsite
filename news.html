@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Social News Program</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+        <a href="index.html">
+            <img src="images/logo.PNG" alt="Website Logo" class="logo">
+        </a>
+        <h1>Beginner's Guide to Tech Support</h1>
+        <p>This website will serve as a quick guide on how to perform well on a help desk team.</p>
+    </header>
+
+  <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="levels.html">Levels of Support</a></li>
+            <li><a href="environments.html">Environments</a></li>
+            <li><a href="ticket.html">Ticketing Systems</a></li>
+            <li class="dropdown">
+                <a href="about.html">About</a>
+                <ul class="submenu">
+                    <li><a href="calculator-form.html">Support Price Calculator</a></li>
+                    <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                    <li><a href="MPG-calculator.html">MPG Calculator</a></li>
+                    <li><a href="news.html">News Page</a></li>
+                </ul>
+            </li>
+    </nav>
+
+  <main>
+    <section>
+      <h2>Actions</h2>
+      <p>Choose an action below:</p>
+      <div class="actions">
+        <button onclick="showLinks()">Show Links</button>
+        <button onclick="addLink()">Add Link</button>
+        <button onclick="removeLink()">Remove Link</button>
+        <button onclick="quitProgram()">Quit</button>
+      </div>
+
+      <div id="links" class="link-list"></div>
+    </section>
+  </main>
+
+ <footer>
+        <p>&copy; All Rights Reserved 2025</p>
+        <p>Contact Info:
+            <a href="https://github.com/Nelson-Negron">GitHub</a> | 
+            <a href="https://linkedin.com/in/nelson-negron-467556196">LinkedIn</a>
+        </p>
+</footer>
+
+  <script>
+    let links = [];
+    let quit = false;
+
+    function showLinks() {
+      const linksDiv = document.getElementById("links");
+      linksDiv.innerHTML = "";
+
+      if (links.length === 0) {
+        linksDiv.innerHTML = "<p>No links yet!</p>";
+        return;
+      }
+
+      links.forEach((link, index) => {
+        const item = document.createElement("div");
+        item.className = "link-item";
+        item.innerHTML = `<strong>${index + 1}.</strong> Title: ${link.title}, 
+                          URL: <a href="${link.url}" target="_blank">${link.url}</a>, 
+                          Author: ${link.author}`;
+        linksDiv.appendChild(item);
+      });
+    }
+
+    function addLink() {
+      const title = prompt("What's your title?");
+      if (!title) return;
+
+      let url = prompt("URL:");
+      if (!url) return;
+      if (!url.startsWith("http://") && !url.startsWith("https://")) {
+        url = "http://" + url;
+      }
+
+      const author = prompt("Your name:");
+      if (!author) return;
+
+      links.push({ title, url, author });
+      alert("Link added successfully!");
+      showLinks();
+    }
+
+    function removeLink() {
+      if (links.length === 0) {
+        alert("No links to remove!");
+        return;
+      }
+
+      let index;
+      do {
+        index = prompt("Enter the index number of the link to remove (1 to " + links.length + "):");
+        if (index === null) return;
+        index = parseInt(index);
+      } while (isNaN(index) || index < 1 || index > links.length);
+
+      links.splice(index - 1, 1);
+      alert("Link removed successfully!");
+      showLinks();
+    }
+
+    function quitProgram() {
+      quit = true;
+      alert("Program ended. Refresh the page to restart.");
+    }
+  </script>
+</body>
+</html>

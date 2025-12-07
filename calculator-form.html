@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Beginner's Guide to Tech Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo.PNG" alt="Website Logo" class="logo">
+        </a>
+        <h1>Support Price Calculator</h1>
+        <p>Use this calculator to determine how much money each support task costs.</p>
+    </header>
+
+  <nav>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="levels.html">Levels of Support</a></li>
+            <li><a href="environments.html">Environments</a></li>
+            <li><a href="ticket.html">Ticketing Systems</a></li>
+            <li class="dropdown">
+                <a href="about.html">About</a>
+                <ul class="submenu">
+                    <li><a href="calculator-form.html">Support Price Calculator</a></li>
+                    <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                    <li><a href="MPG-calculator.html">MPG Calculator</a></li>
+                    <li><a href="news.html">News Page</a></li>
+                </ul>
+            </li>
+        </nav>
+
+    <main>
+        <!-- Calculator Form -->
+        <div class="row">
+            <div class="col-6">General Support</div>
+            <div class="col-3"><input type="number" value="0" class="qty" id="qty_general"></div>
+            <div class="col-2"><input type="number" readonly value="0" id="price_general"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">Software Install</div>
+            <div class="col-3"><input type="number" value="0" class="qty" id="qty_software"></div>
+            <div class="col-2"><input type="number" readonly value="0" id="price_software"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">Administrative Support</div>
+            <div class="col-3"><input type="number" value="0" class="qty" id="qty_admin"></div>
+            <div class="col-2"><input type="number" readonly value="0" id="price_admin"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">Hardware Component Replacement</div>
+            <div class="col-3"><input type="number" value="0" class="qty" id="qty_hardware"></div>
+            <div class="col-2"><input type="number" readonly value="0" id="price_hardware"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">Asset Management Support</div>
+            <div class="col-3"><input type="number" value="0" class="qty" id="qty_asset"></div>
+            <div class="col-2"><input type="number" readonly value="0" id="price_asset"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">OS Reinstall</div>
+            <div class="col-3"><input type="number" value="0" class="qty" id="qty_os"></div>
+            <div class="col-2"><input type="number" readonly value="0" id="price_os"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">Data Recovery</div>
+            <div class="col-3"><input type="number" value="0" class="qty" id="qty_recovery"></div>
+            <div class="col-2"><input type="number" readonly value="0" id="price_recovery"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">Data Migration</div>
+            <div class="col-3"><input type="number" value="0" class="qty" id="qty_migration"></div>
+            <div class="col-2"><input type="number" readonly value="0" id="price_migration"></div>
+        </div>
+
+        <p>Total: $<span id="total_value">0</span></p>
+    </main>
+
+    <footer>
+        <p>Note: The prices reflected in this page do not accurately represent the real cost of such services.</p>
+        <p>&copy; All Rights Reserved 2025</p>
+        <p>Contact Info:
+            <a href="https://github.com/Nelson-Negron">GitHub</a> |
+            <a href="https://linkedin.com/in/nelson-negron-467556196">LinkedIn</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript goes here, at the bottom -->
+    <script>
+        function calculateTotal() {
+            let unit_price = {
+                general: 2,
+                software: 2,
+                admin: 5,
+                hardware: 25,
+                asset: 30,
+                os: 25,
+                recovery: 50,
+                migration: 35
+            };
+
+            let item_price = {};
+            item_price.general = $("#qty_general").val() * unit_price.general;
+            $("#price_general").val(item_price.general);
+
+            item_price.software = $("#qty_software").val() * unit_price.software;
+            $("#price_software").val(item_price.software);
+
+            item_price.admin = $("#qty_admin").val() * unit_price.admin;
+            $("#price_admin").val(item_price.admin);
+
+            item_price.hardware = $("#qty_hardware").val() * unit_price.hardware;
+            $("#price_hardware").val(item_price.hardware);
+
+            item_price.asset = $("#qty_asset").val() * unit_price.asset;
+            $("#price_asset").val(item_price.asset);
+
+            item_price.os = $("#qty_os").val() * unit_price.os;
+            $("#price_os").val(item_price.os);
+
+            item_price.recovery = $("#qty_recovery").val() * unit_price.recovery;
+            $("#price_recovery").val(item_price.recovery);
+
+            item_price.migration = $("#qty_migration").val() * unit_price.migration;
+            $("#price_migration").val(item_price.migration);
+
+            let total = Object.values(item_price).reduce((a, b) => a + b, 0);
+            $("#total_value").text(total);
+        }
+
+        $(function () {
+            $(".qty").on("change keyup", calculateTotal);
+        });
+    </script>
+</body>
+</html>

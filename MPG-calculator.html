@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang ="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Beginner's Guide to Tech Support</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <a href="index.html">
+                <img src="images/logo.PNG" alt="Website Logo" class="logo">
+            </a>
+            <h1>Mines per Gallon Calculator</h1>
+            <p>Use this calculator to determine how much your miles per gallon usage is.</p>
+        </header>
+
+       <nav>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="levels.html">Levels of Support</a></li>
+            <li><a href="environments.html">Environments</a></li>
+            <li><a href="ticket.html">Ticketing Systems</a></li>
+            <li class="dropdown">
+                <a href="about.html">About</a>
+                <ul class="submenu">
+                    <li><a href="calculator-form.html">Support Price Calculator</a></li>
+                    <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                    <li><a href="MPG-calculator.html">MPG Calculator</a></li>
+                    <li><a href="news.html">News Page</a></li>
+                </ul>
+            </li>
+        </nav>
+            <p>
+                <label for="miles"><strong>Miles Traveled:</strong></label><br />
+                <input type="number" id="miles" placeholder="Enter the miles traveled" step="any" />
+            </p>
+
+            <p> <!-- input for gallons-->
+                <label for="gallons"><strong>Gallons Used:</strong></label><br />
+                <input type="number" id="gallons" placeholder="Enter the gallons used" step="any" />
+            </p>
+
+            <p> <!-- trigger-->
+                <button onclick="calculateMPG()">=</button>
+            </p>
+
+            <p><strong>Your Miles per Gallon is: </strong></p>
+
+        <div id="result">--</div>
+
+            <script type="text/javascript"> //JS for calculation
+                function calculateMPG() {
+                var miles = parseFloat(document.getElementById('miles').value);
+                var gallons = parseFloat(document.getElementById('gallons').value);
+                var output = document.getElementById('result');
+
+                if (isNaN(miles) || isNaN(gallons)) {
+                    output.innerHTML = 'Calculation not possible. Please try again.';
+                    return;
+                }
+                if (gallons === 0) 
+                {
+                    output.innerHTML = 'Gallons cant be zero.';
+                    return;
+                }
+
+                var mpg = miles / gallons;
+                output.innerHTML = mpg.toFixed(2) + ' MPG';
+            }
+            </script>
+
+  <!-- Brightspace Scripts (required by your course environment) --><!-- not sure what to do with this-->
+  <script type="module" src="https://s.brightspace.com/lib/bsi/2025.10.239/unbundled/mathjax.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      if (document.querySelector('math, .d2l-element, .d2l-cplus-layout') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+        document.querySelectorAll('mspace[linebreak="newline"]').forEach(function(elm) {
+          elm.setAttribute('style', 'display: block; height: 0.5rem;');
+        });
+
+        document.querySelectorAll('math mmultiscripts > none').forEach(function(elm) {
+          var mrow = document.createElementNS('http://www.w3.org/1998/Math/MathML', 'mrow');
+          elm.replaceWith(mrow);
+        });
+
+        window.D2L.MathJax.loadMathJax({
+          outputScale: 1.5,
+          renderLatex: true,
+          enableMML3Support: false
+        });
+      }
+    });
+  </script>
+
+  <script type="module" src="https://s.brightspace.com/lib/bsi/2025.10.239/unbundled/prism.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.d2l-code').forEach(function(code) {
+        window.D2L.Prism.formatCodeElement(code);
+      });
+    });
+  </script>
+
+  <script type="module" src="https://s.brightspace.com/lib/bsi/2025.10.239/unbundled/embeds.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      window.D2L.EmbedRenderer.renderEmbeds(document.body);
+    });
+  </script>
+
+</body>
+
+ <footer>
+            <p>&copy; All Rights Reserved 2025</p>
+            <p>Contact Info:
+                <a href="https://github.com/Nelson-Negron">GitHub</a> | 
+                <a href="https://linkedin.com/in/nelson-negron-467556196">LinkedIn</a>
+            </p>
+        </footer>
+    </body>
+</html>
+</html>

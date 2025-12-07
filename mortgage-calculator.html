@@ -1,0 +1,99 @@
+
+
+<script language="JavaScript" src="calculator.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"></head>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Beginner's Guide to Tech Support</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body bgcolor="#CCFFFF">
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo.PNG" alt="Website Logo" class="logo">
+        </a>
+        <h1>Mortgage Calculator</h1>
+        <p>Use this calculator to determine how much your mortgage may be.</p>
+    </header>
+
+  <nav>
+            <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="levels.html">Levels of Support</a></li>
+            <li><a href="environments.html">Environments</a></li>
+            <li><a href="ticket.html">Ticketing Systems</a></li>
+            <li class="dropdown">
+                <a href="about.html">About</a>
+                <ul class="submenu">
+                    <li><a href="calculator-form.html">Support Price Calculator</a></li>
+                    <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+                    <li><a href="MPG-calculator.html">MPG Calculator</a></li>
+                    <li><a href="news.html">News Page</a></li>
+                </ul>
+            </li>
+        </nav>
+
+
+
+<table width="500" height="152" border="1" align="center" cellpadding="5" cellspacing="0" bgcolor="#CCFFCC">
+  <tr>
+	<td width="228" height="150" align="center" valign="middle">
+
+<div align="justify"><font color="#666666" face="Arial, Helvetica, sans-serif">
+To use the Home Mortgage Calculator enter the amount of the mortgage, the interest of the loan, and the number of years. Then click on the &quot;Calculate&quot; button to see an estimate of your monthly payment.
+</font></div>
+	
+	</td>
+
+	<td width="246" align="center" valign="middle">
+	<!-- add table and form inside this cell -->
+	 <form name="Form1">
+		<table width="235" height="140">
+			<tr>
+				<td>Mortgage:</td>
+				<td><input type="text" name="Amount" value=" " size="9"></td>
+			</tr>
+			<tr>
+				<td>Interest (e.g., 7.9)</td>
+				<td><input type="text" name="Rate" value=" " size="9"></td>
+			</tr>
+			<tr>
+				<td>Years:</td>
+				<td>
+				<select name="Years">
+						<option value="0">0</option>
+						<option value="15">15</option>
+						<option value="20">20</option>
+						<option value="25">25</option>
+						<option value="30">30</option>
+				</select>
+			</td>
+			</tr>
+			<tr>
+				<td><input type="button" value="Calculate" onclick="mortCalc(Form1)"></td>
+				<td><input type="reset" value="Reset"></td>
+			</tr>
+			<tr>
+				<td>Youe monthly payment is:</td>
+				<td><input type="text" name="Payment" size="9"></td>
+			</tr>
+		</table>
+		</form>
+  	</td>
+</tr>
+</table>
+
+<footer>
+            <p>&copy; All Rights Reserved 2025</p>
+            <p>Contact Info:
+                <a href="https://github.com/Nelson-Negron">GitHub</a> | 
+                <a href="https://linkedin.com/in/nelson-negron-467556196">LinkedIn</a>
+            </p>
+        </footer>
+
+</body>
