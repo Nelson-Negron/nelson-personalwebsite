@@ -278,3 +278,40 @@ input[type="number"] {
 .actions button:hover {
   background-color: #ff4136;
 }
+
+.slider {
+  position: relative;
+  max-width: 800px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.slides img {
+  width: 100%;
+  display: none;
+}
+
+.slides img.active {
+  display: block;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 12px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.5);
+}
