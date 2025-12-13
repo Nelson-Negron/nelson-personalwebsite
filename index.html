@@ -7,6 +7,30 @@
         <link rel="stylesheet" href="styles.css">
     </head>
 
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.querySelectorAll(".slides img");
+  slides.forEach(slide => slide.classList.remove("active"));
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  slides[slideIndex-1].classList.add("active");
+  setTimeout(showSlides, 4000); // Change image every 4 seconds
+}
+
+function plusSlides(n) {
+  let slides = document.querySelectorAll(".slides img");
+  slides.forEach(slide => slide.classList.remove("active"));
+  slideIndex += n;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+  if (slideIndex < 1) { slideIndex = slides.length; }
+  slides[slideIndex-1].classList.add("active");
+}
+</script>
+
+
     <body>
         <header>
             <a href="index.html">
@@ -44,7 +68,22 @@
                     <li>Pages for other assignments completed during this course.</li>
                 </ul>
             </section>
+
+            <section class="slider">
+                <div class="slides">
+                    <img src="images/slider/cloud.png" alt="Slide 1" class="active">
+                    <img src="images/slider/tinker.png" alt="Slide 2">
+                    <img src="images/slider/ticket.png" alt="Slide 3">
+                    <img src="images/slider/laptop.png" alt="Slide 4">
+                </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
         </main>
+
+
      
         <footer>
             <p>&copy; All Rights Reserved 2025</p>
